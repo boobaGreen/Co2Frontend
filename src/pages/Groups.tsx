@@ -10,7 +10,7 @@ const Groups = () => {
   const { jwt } = useMain();
   const { groups = [], isLoading, error } = useGetGroups(jwt);
   const [onlyFavourite, setOnlyFavourite] = useState(false);
-
+  console.log("groups", groups);
   // Utilizza il tuo hook useLocalStorageState per gestire i preferiti
   const [favourites, setFavourites] = useLocalStorageState(
     {}, // Stato iniziale
