@@ -35,15 +35,6 @@ const Groups = () => {
     ? groups.filter((group) => favourites[group.groupId])
     : groups;
 
-  // Funzioni per gestire i click sui bottoni "Stat", "Limit"
-
-  // // Funzioni per gestire i click sui bottoni "Stat", "Limit"
-  // const handleDonateClick = (groupId: string) => {
-  //   console.log(`Clicked "Stat" for group ${groupId}`);
-  //   // Implementa la logica desiderata per il pulsante "Stat"
-  // };
-
-  // Renderizzazione del componente principale dei gruppi
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error: {error.message}</div>;
 
