@@ -49,6 +49,7 @@ function reducer(state: UserState, action: Action): UserState {
       const { userId, userName, userNick, jwt } = action.payload!;
       return {
         ...state,
+        telegramId: action.payload!.telegramId,
         userId: userId || state.userId,
         userName: userName || state.userName,
         userNick: userNick || state.userNick,
