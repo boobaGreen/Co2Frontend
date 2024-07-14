@@ -9,7 +9,7 @@ export interface Group {
   totalEmissionsOneByte: number;
   totalEmissionsSWD: number;
   lastReportTimestamp: string;
-  adminNames: string[];
+  adminIds: number[];
   groupLimits: string;
   donations: string[]; // Assuming donations are strings
   textTotalMessages: number;

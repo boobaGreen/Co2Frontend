@@ -67,7 +67,7 @@ function reducer(state: UserState, action: Action): UserState {
 
 function MainProvider({ children }: { children: React.ReactNode }) {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  console.log("dev o prod env", `${import.meta.env.VITE_APP_BASE_URL_FE}`);
   useEffect(() => {
     async function verifyToken() {
       if (state.jwt) {

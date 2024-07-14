@@ -18,7 +18,7 @@ const GroupCard: React.FC<GroupCardProps> = ({
 }) => {
   const navigate = useNavigate();
   const mainContext = useMain();
-  const { userName } = mainContext || {};
+  const { userId } = mainContext || {};
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDonationId, setSelectedDonationId] = useState<string | null>(
@@ -44,7 +44,7 @@ const GroupCard: React.FC<GroupCardProps> = ({
     setIsModalOpen(false);
   };
 
-  const isAdmin = group.adminNames.includes(userName);
+  const isAdmin = group.adminIds.includes(parseInt(userId));
 
   const navigateToLimitPage = (
     groupId: string,
@@ -105,10 +105,10 @@ const GroupCard: React.FC<GroupCardProps> = ({
         <p>Last Report TimeStamp: {group.lastReportTimestamp}</p>
         <p>
           Admin:{" "}
-          {group.adminNames.map((admin, index) => (
+          {group.adminIds.map((admin, index) => (
             <span key={index}>
               {admin}
-              {index !== group.adminNames.length - 1 && ", "}
+              {index !== group.adminIds.length - 1 && ", "}
             </span>
           ))}
         </p>
