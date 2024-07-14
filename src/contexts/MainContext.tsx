@@ -3,6 +3,7 @@ import Cookies from "js-cookie";
 
 // Interface for User state
 export interface UserState {
+  telegramId: string;
   userId: string;
   userName: string;
   userNick: string;
@@ -15,6 +16,7 @@ export interface UserState {
 interface Action {
   type: string;
   payload?: {
+    telegramId: string;
     userId?: string;
     userName?: string;
     userNick?: string;
@@ -27,6 +29,7 @@ interface Action {
 const jwtTokenInit = Cookies.get("jwt-co2") || "";
 
 const initialState: UserState = {
+  telegramId: "",
   userId: "",
   userName: "",
   userNick: "",
@@ -87,6 +90,7 @@ function MainProvider({ children }: { children: React.ReactNode }) {
             dispatch({
               type: "SET_USER",
               payload: {
+                telegramId: data.telegramId,
                 userId: data.userId,
                 userName: data.userName,
                 userNick: data.userNick,

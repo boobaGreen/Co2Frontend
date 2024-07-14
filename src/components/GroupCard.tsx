@@ -18,8 +18,8 @@ const GroupCard: React.FC<GroupCardProps> = ({
 }) => {
   const navigate = useNavigate();
   const mainContext = useMain();
-  const { userId } = mainContext || {};
-  console.log("userId", userId);
+  const { telegramId } = mainContext || {};
+  console.log("telegramId", telegramId);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDonationId, setSelectedDonationId] = useState<string | null>(
@@ -45,10 +45,10 @@ const GroupCard: React.FC<GroupCardProps> = ({
     setIsModalOpen(false);
   };
 
-  const userIdNumber = parseInt(userId);
-  console.log("userIdNumber", userIdNumber);
+  const telegramIdNumber = parseInt(telegramId);
+  console.log("telegramIdNumber", telegramId);
   console.log("group.adminIds", group.adminIds);
-  const isAdmin = group.adminIds.includes(userIdNumber);
+  const isAdmin = group.adminIds.includes(telegramIdNumber);
   console.log("isAdmin", isAdmin);
   const navigateToLimitPage = (
     groupId: string,
