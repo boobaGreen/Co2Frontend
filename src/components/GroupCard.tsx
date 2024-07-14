@@ -44,8 +44,11 @@ const GroupCard: React.FC<GroupCardProps> = ({
     setIsModalOpen(false);
   };
 
-  const isAdmin = group.adminIds.includes(parseInt(userId));
-
+  const userIdNumber = parseInt(userId);
+  console.log("userIdNumber", userIdNumber);
+  console.log("group.adminIds", group.adminIds);
+  const isAdmin = group.adminIds.includes(userIdNumber);
+  console.log("isAdmin", isAdmin);
   const navigateToLimitPage = (
     groupId: string,
     groupName: string,
