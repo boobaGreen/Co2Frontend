@@ -67,7 +67,7 @@ const Groups = () => {
           onClick={handleOnlyFavouriteClick}
           className="my-4 bg-yellow-400 hover:bg-yellow-500 text-green-900 font-bold py-2 px-4 rounded"
         >
-          {onlyFavourite ? "Show All" : "Show Favourites"}
+          {onlyFavourite ? "Show All " : "Show Favourites"}
         </button>
 
         <div className="flex flex-col items-center space-y-3 w-full px-4 mb-8">
