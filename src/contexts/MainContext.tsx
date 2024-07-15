@@ -46,10 +46,10 @@ const QueryContext = createContext<UserState>(initialState);
 function reducer(state: UserState, action: Action): UserState {
   switch (action.type) {
     case "SET_USER": {
-      const { userId, userName, userNick, jwt } = action.payload!;
+      const { userId, userName, userNick, jwt, telegramId } = action.payload!;
       return {
         ...state,
-        telegramId: action.payload!.telegramId,
+        telegramId: telegramId || state.telegramId,
         userId: userId || state.userId,
         userName: userName || state.userName,
         userNick: userNick || state.userNick,
@@ -88,6 +88,7 @@ function MainProvider({ children }: { children: React.ReactNode }) {
 
           if (response.ok) {
             const data = await response.json();
+            console.log("data.telegramid", data.telegramId);
             dispatch({
               type: "SET_USER",
               payload: {

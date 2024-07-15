@@ -58,6 +58,7 @@ const TelegramLoginButton: React.FC = () => {
             secure: true,
             sameSite: "None",
           });
+          console.log("telegram id", user.id);
           dispatch({
             type: "SET_USER",
             payload: {
