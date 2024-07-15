@@ -89,6 +89,9 @@ function MainProvider({ children }: { children: React.ReactNode }) {
           if (response.ok) {
             const data = await response.json();
             console.log("data.telegramid", data.telegramId);
+            console.log("data.userid", data.userId);
+            console.log("data.username", data.userName);
+            console.log("data.usernick", data.userNick);
             dispatch({
               type: "SET_USER",
               payload: {
