@@ -5,7 +5,6 @@ import Cookies from "js-cookie"; // Import Cookies for handling cookies
 import { useMain } from "../contexts/MainContext";
 
 interface TelegramUser {
-  telegramId: number;
   id: number;
   first_name: string;
   username: string;
@@ -62,8 +61,7 @@ const TelegramLoginButton: React.FC = () => {
           dispatch({
             type: "SET_USER",
             payload: {
-              telegramId: user.telegramId + "",
-              userId: user.id + "",
+              telegramId: user.id + "",
               userName: user.first_name ?? undefined,
               userNick: user.username ?? undefined,
               jwt: tokenJwt,
