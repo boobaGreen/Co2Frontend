@@ -96,7 +96,7 @@ function MainProvider({ children }: { children: React.ReactNode }) {
             dispatch({
               type: "SET_USER",
               payload: {
-                telegramId: data.telegramId,
+                telegramId: data.userTelegramId,
                 userId: data.userId,
                 userName: data.userName,
                 userNick: data.userNick,
